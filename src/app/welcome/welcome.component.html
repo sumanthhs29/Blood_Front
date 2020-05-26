@@ -1,0 +1,158 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" [routerLink]="['/welcome']">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/help']">Help <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/']">Logout</a>
+        </li>
+       
+      </ul>
+    </div>
+  </nav>
+
+
+<div class="container-fluid" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6xYZcl8D3WM8ShNWAEnll_kw_rFRkOletIYfFkZxu5L_G3RC6qQ);background-size: cover;height: 700px;">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10" ><div id="opt" style="margin-top: 150px;">
+                <h3> <span  id="cho"> Choose </span><span> </span>
+                    <span style="background-color: none;margin-left: 280px" id="don"> Donor </span>
+                    <span style="float: right;background-color: none" id="acc"> Acceptor </span><span> </span>
+                   
+                    <span style="background-color: white"> </span></h3>
+                <hr style="margin-top: -20px">  </div>          
+                
+          <div class="card" style="margin-top: 30px;" id="info" >
+
+            <div class="row">
+                <div class="col-sm-7" >
+                    <img src="https://cdn5.eyeem.com/thumb/8737ac9a5ca99f468394610be6703c943f5533c9-1482779134323/w/750" alt="blood" height="300px" width="100%">
+                </div>
+                <div class="col-sm-5" style="text-align: center;padding-top: 50px">
+                    <h4 style="color:rgb(245, 190, 89);font-family: cursive;">What do you want to be..?</h4><br>
+                <button class="btn btn-outline-danger" type="button" id="acc_btn">Acceptor</button><br><br>
+                <button class="btn btn-outline-primary" type="button" id="dnr_btn">Donor</button>
+                </div>
+            </div>
+              </div>
+              <div class="card" style="margin-top: 30px;display: none;" id="donor_card">
+                <div class="row">
+                    <div class="col-sm-5" >
+                        <img src="https://mealsonwheelswny.org/wp-content/uploads/2018/01/Heart-Blood-Donations-300x200.png" alt="blood" height="100%" width="100%">
+                    </div>
+                    <div class="col-sm-7" style="text-align: center;padding-top: 50px">
+                        <h4 style="font-family: cursive;margin-bottom: 20px">Register to become a donor</h4>
+                        <form (submit)="donor(donorform)" #donorform="ngForm">
+                        <div class="row">
+                            
+                            <div class="col-sm-6" >
+                                    <mat-form-field >
+                                            <input matInput placeholder="First Name" type="text" name="fname" ngModel required #fname="ngModel"/>
+                                            <mat-error *ngIf="fname.invalid">First Name Required</mat-error>
+                                        </mat-form-field><br><br>
+                                        <mat-form-field style="display: none">
+                                                <input matInput   [(ngModel)] = 'userNumber'   name="phoneNO" ngModel #pho="ngModel" />
+                                                <mat-error *ngIf="pho.invalid">Mobile No Required</mat-error>
+                                            </mat-form-field>
+                                            <!-- <mat-form-field >
+                                                    <input matInput placeholder="Blood group" type="text" name="blood" ngModel required #blo="ngModel"/>
+                                                    <mat-error *ngIf="blo.invalid">Blood group  Required</mat-error>
+                                                </mat-form-field><br><br> -->
+                                                <mat-form-field >
+                                                    <input matInput placeholder="City" type="text" name="adress" ngModel required #adress="ngModel"/>
+                                                    <mat-error *ngIf="adress.invalid">City Required</mat-error>
+                                                </mat-form-field>
+                                                <mat-form-field>
+                                                    <mat-label>Blood</mat-label>
+                                                    <select matNativeControl required name="blood" ngModel>
+                                                      <option value="a+">A+</option>
+                                                      <option value="a-">A-</option>
+                                                      <option value="b+">B+</option>
+                                                      <option value="b-">B-</option>
+                                                      <option value="ab+">AB+</option>
+                                                      <option value="ab-">AB-</option>
+                                                      <option value="o+">O+</option>
+                                                      <option value="o-">O-</option>
+                                                    </select>
+                                                  </mat-form-field><br><br>
+                                                 
+                            </div>
+                            <div class="col-sm-6">
+                                    <mat-form-field >
+                                            <input matInput placeholder="Last Name" type="text" name="lname" ngModel required #lname="ngModel"/>
+                                            <mat-error *ngIf="lname.invalid">Last Name Required</mat-error>
+                                        </mat-form-field><br><br> 
+                                        <mat-form-field >
+                                                <input matInput placeholder="Age" type="number" name="age" ngModel required #age="ngModel"/>
+                                                <mat-error *ngIf="age.invalid">Age Required</mat-error>
+                                            </mat-form-field><br>
+                                           
+                                            
+
+                            </div>
+                            
+                            <!-- <input type="checkbox" value="val1" name="check">  -->
+                            
+                            I,hereby declare that I am keen to become a volunteer donor<br>
+                                                <br>
+                            <button class="btn btn-outline-danger" type="button" id="back_btn">Previous</button>
+                                            
+                            <button class="btn btn-outline-success" type="submit" style="margin-left: 180px">Register</button>
+                                            <br><br>
+                                
+                            
+                        </div><br>
+                       
+                    </form>
+
+                    </div>
+                </div>
+                  </div>
+
+
+                  <div class="card" style="margin-top: 30px;display: none;" id="acc_info">
+                        <div class="row">
+                            <div class="col-sm-7" >
+                                <img src="http://nafarma.com/wp-content/uploads/2017/10/Blood-17.jpg" alt="blood" height="300px" width="100%">
+                            </div>
+                            <div class="col-sm-5" style="text-align: center;padding-top: 50px">
+                                <h3 style="color:rgb(245, 190, 89);">Search Your Blood-Group Below</h3><br>
+                                <form (submit)="search(fromvar)" #fromvar="ngForm">
+                                  <mat-form-field>
+                                    <mat-label>Blood-Group</mat-label>
+                                    <select matNativeControl required name="blood" ngModel>
+                                      <option value="a+">A+</option>
+                                      <option value="a-">A-</option>
+                                      <option value="b+">B+</option>
+                                      <option value="b-">B-</option>
+                                      <option value="ab+">AB+</option>
+                                      <option value="ab-">AB-</option>
+                                      <option value="o+">O+</option>
+                                      <option value="o-">O-</option>
+                                    </select>
+                                  </mat-form-field><br><br>
+                                  <button class="btn btn-outline-danger" type="button" id="back_btn2">Previous</button>
+                                  <button class="btn btn-outline-info" type="submit" style="margin-left: 30px">Search</button><br><br>
+
+                                </form>
+                               
+                            </div>
+                        </div>
+                          </div>
+          </div>
+            
+            
+        
+        
+        <div class="col-sm-1"></div>
+    </div>
+</div>
+
+</div>

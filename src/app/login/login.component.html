@@ -1,0 +1,50 @@
+<div class="" id="cover">
+        <marquee behavior="scroll" direction="left" style="margin-top:50px;color: white;
+        font-family: cursive;"
+        id="contact"><h3><b>"Blood is meant to circulate,pass it around!"</b></h3></marquee>
+    <div class="container">
+            
+    <div class="row">
+       <div class="col-sm-6">
+          <div class="card">
+              <div class="card-body" style="text-align: center;">
+                  <h3 style="font-family: cursive;">  "Don't let fools <br> or Mosquitoes </h3><hr><h3>
+                    <b>SUCK YOUR BLOOD <br> PUT IT TO GOOD USE</b><br></h3><h3 style="font-family: cursive">
+                    -Donate blood <br> and save a life"</h3>
+                  </div>
+              </div>
+              <h4 style="margin-top: 30px;text-align:center">New Member...? <a [routerLink]="['/']">Sign in</a></h4>
+          
+       </div>
+        <div class="col-sm-6">
+            <mat-card >
+                <h3 style="font-family: cursive;text-align: center">Login</h3><br>
+                <form (submit)="logIn(loginForm)" #loginForm="ngForm" style="text-align: center">
+                    <!-- <mat-form-field style="color: white">
+                        <input matInput placeholder="User Name" type="text" name="name" ngModel required #name="ngModel" >
+                        <mat-error *ngIf="name.invalid">Username required</mat-error>
+                    </mat-form-field><br><br> 
+                    <mat-form-field style="color: white">
+                            <input matInput placeholder="Email" type="email" name="emailID" ngModel required #email="ngModel"/>
+                            <mat-error *ngIf="email.invalid">Email Required</mat-error>
+                        </mat-form-field><br><br>-->
+                    <mat-form-field style="color: white">
+                        <input matInput placeholder="phone number" type="number" name="phoneNO" ngModel required #loginID="ngModel"/>
+                        <mat-error *ngIf="loginID.invalid">Mobile No Required</mat-error>
+                    </mat-form-field><br><br>
+            
+                    <mat-form-field style="color: white">
+                        <input matInput placeholder="Password" type="password" name="password" ngModel required #password="ngModel"/>
+                        <mat-error *ngIf="password.invalid">Password required</mat-error>
+                    </mat-form-field><br>
+                    <!-- <mat-form-field>
+                        <input matInput placeholder="User Type" type="text" name="userType" ngModel required #userType="ngModel"/>
+                        <mat-error *ngIf="userType.invalid">Blood Group required</mat-error>
+                    </mat-form-field><br><br> -->
+                    <button mat-button  type="submit">Login</button>
+                </form>
+            </mat-card>
+            
+        </div>
+    </div></div>
+</div>

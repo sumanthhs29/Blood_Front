@@ -1,0 +1,36 @@
+mat-card{
+    width: 400px;
+    background-color: red;
+    background-image: linear-gradient(to bottom left,rgb(240, 146, 174),rgb(238, 123, 123),rgb(226, 109, 105));
+     box-shadow: -1px 9px 40px -12px white;
+     border-radius: 10px;
+     margin-top: 100px;
+
+}
+/* mat-form-field {
+    color: white;
+}
+mat-input{
+    color: white;
+
+} */
+button{
+    background-color: blue;
+    color: white;
+    margin-top: 50px;
+}
+
+#cover{
+   height: 753px;
+   width: 100%;
+    background-image: url('https://backgrounddownload.com/wp-content/uploads/2018/09/background-images-for-blood-bank-project-6.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card{
+    margin-top: 100px;opacity: 0.42;margin-top: 200px;
+}
+.card:hover{
+ box-shadow: -1px 9px 100px -12px rgba(0,0,0,0.75);   
+}
